@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.tsx
 
-export default function App() {
+import React from "react";
+import { LoginScreen } from "./src/screens/LoginScreen";
+import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
+import { TermsScreen } from "./src/screens/TermsScreen";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <StarshipFeedScreen />
+    </QueryClientProvider>
+    // <LoginScreen />
+    // <TermsScreen />
+    // <StarshipFeedScreen />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// always export default App otherwise Expo is not happy
+export default App;
