@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import ContentLoader, { Facebook } from "react-content-loader/native";
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,7 +8,7 @@ import {
   View,
   FlatList,
 } from "react-native";
-import { Avatar, AvatarIconProps, Card } from "react-native-paper";
+import { Avatar, Card } from "react-native-paper";
 
 import { useImage } from "../hooks/useImages";
 import { fetchStarships } from "../hooks/useStarships";

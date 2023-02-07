@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, ScrollView, FlatList } from "react-native";
+import { View, Image, ScrollView } from "react-native";
 import { Appbar, Text } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 

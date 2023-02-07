@@ -20,4 +20,5 @@ const App = () => {
 };
 
 // always export default App otherwise Expo is not happy
-export { App as App };
+export default App;
+// export App;
