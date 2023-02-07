@@ -9,9 +9,8 @@ import {
   View,
   FlatList,
 } from "react-native";
-import { Avatar, Button, Card } from "react-native-paper";
+import { Avatar, AvatarIconProps, Card } from "react-native-paper";
 
-import { default as data } from "../../api/data.json";
 import { useImage } from "../hooks/useImages";
 import { fetchStarships } from "../hooks/useStarships";
 
@@ -19,12 +18,12 @@ type ItemData = {
   name: string;
   model: string;
   crew: string;
-  hyperdrive_rating: string;
+  hyperdriveRating: string;
 };
 
-const LeftContent = (props: any) => <Avatar.Icon {...props} icon="folder" />;
+const LeftContent = (props: object) => <Avatar.Icon {...props} icon="folder" />;
 
-const Item = ({ name, model, crew, hyperdrive_rating }: ItemData) => {
+const Item = ({ name, model, crew, hyperdriveRating }: ItemData) => {
   const source = useImage(name);
 
   return (
@@ -32,7 +31,7 @@ const Item = ({ name, model, crew, hyperdrive_rating }: ItemData) => {
       <Card.Title title={name} subtitle={model} left={LeftContent} />
       <Card.Content>
         <Text>Populace : {crew}</Text>
-        <Text>Hyperdrive : {hyperdrive_rating}</Text>
+        <Text>Hyperdrive : {hyperdriveRating}</Text>
       </Card.Content>
       <Card.Cover source={source} />
     </Card>
@@ -80,7 +79,7 @@ export const StarshipFeedScreen = () => {
             name={item.name}
             model={item.model}
             crew={item.crew}
-            hyperdrive_rating={item.hyperdrive_rating}
+            hyperdriveRating={item.hyperdriveRating}
           />
         )}
       />
@@ -98,18 +97,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: StatusBar.currentHeight,
-  },
-  container: {
-    paddingHorizontal: 20,
-    marginTop: 20,
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  name: {
-    fontSize: 32,
   },
 });

@@ -6,11 +6,13 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx ."
   },
   "dependencies": {
     "@tanstack/react-query": "^4.24.4",
     "expo": "~47.0.12",
+    "expo-constants": "^14.0.2",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
     "react-content-loader": "^6.2.0",
@@ -26,6 +28,8 @@
     "@babel/core": "^7.12.9",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.70.6",
+    "eslint": "^8.33.0",
+    "eslint-config-react-native-wcandillon": "^3.9.0",
     "typescript": "^4.6.3"
   },
   "private": true
